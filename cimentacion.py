@@ -115,10 +115,15 @@ plt.text(2, -0.2, f'\u03B3 2 = {peso_unitario_2} Ton/m3', va='center', ha='cente
 plt.text(2, -0.4, f'c = {cohesion} Ton/m2', va='center', ha='center')
 plt.text(2, -0.6, f'\u03C6 = {angulo_friccion}°', va='center', ha='center')
 
+ # Mostrar los valores de qu y qadm en cajas con bordes redondeados
+bbox_props = dict(boxstyle="round,pad=0.3", edgecolor="black", facecolor="green", alpha=0.5, lw=1.5)
+ax.text(2, 3.6, f'qu = {qu} kg/cm²', va='center', ha='center', fontsize=12, color='blue', bbox=bbox_props)
+ax.text(2, 3.2, f'qadm = {qadm} kg/cm²', va='center', ha='center', fontsize=12, color='blue', bbox=bbox_props)
+
 # Configurar las etiquetas de los ejes y el título del gráfico
 ax.set_xlabel('Ancho (m)')
 ax.set_ylabel('Altura (m)')
-ax.set_title('Vista Frontal de la Zapata')
+ax.set_title('Grafico - Zapata')
 
 # Mostrar el gráfico, plt.gca() es una función de Matplotlib que significa "get current axes" (obtener los ejes actuales). Devuelve el objeto de los ejes actuales del gráfico, que luego puede ser modificado. set_aspect() es un método del objeto de los ejes que establece la relación de aspecto de los ejes. equal':Este argumento indica que se debe mantener una relación de aspecto igual. Esto significa que una unidad en el eje x es igual a una unidad en el eje y en términos de longitud visual. Los círculos se verán como círculos y los cuadrados como cuadrados, sin distorsión. adjustable='box': Este argumento indica cómo se debe ajustar la caja de los ejes cuando se cambia la relación de aspecto. En resumen, esta línea de código garantiza que las escalas de los ejes x e y sean iguales, de modo que los objetos en el gráfico no se distorsionen y se mantengan proporcionales
 plt.gca().set_aspect('equal', adjustable='box')
